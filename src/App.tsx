@@ -2,6 +2,7 @@ import "./App.css";
 import CarDetailsCard from "./components/CarDetailsCard";
 import Greeting from "./components/Greeting";
 import HelloWorld from "./components/HelloWorld";
+import Users from "./pages/Users";
 
 const lordAltoDetails = {
   carName: "Lord Alto",
@@ -68,13 +69,7 @@ function App() {
 
   return (
     <>
-      <HelloWorld />
-      <div>
-        <Greeting greetingName="Good Morning" language="english" />
-        <div className="grid grid-cols-3">
-          { carsUI }
-        </div>
-      </div>
+      <Users/>
     </>
   );
 }

@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './index.css'
 import Users from './pages/Users.tsx'
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('rooti')!).render(
   <StrictMode>
     <App />
   </StrictMode>,
