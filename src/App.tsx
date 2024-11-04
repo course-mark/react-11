@@ -1,7 +1,12 @@
 import React from "react";
 import './App.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Users from "./pages/Users";
+import Singers from "./pages/Singers";
+import KaranAujla from "./pages/KaranAujla";
+import RanjitBawa from "./pages/RanjitBawa";
+import HarbhajanMaan from "./pages/HarbhajanMaan";
+import SingerDetails from "./components/SingerDetails";
+import SingerPage from "./pages/SingerPage";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -14,12 +19,16 @@ const router = createBrowserRouter([
   },
   {
     path:'/singers',
-    element: <Users/>,
+    element: <Singers/>,
   },
   {
-    path: '/singers/karan-aujla',
-    element: <div>Hello from Karan</div>,
-  }
+    // path variables / path parameters
+    // /singers/karan-aujla -> {singerName: 'karan-aujla'} -> using useParams()
+    // /singers/ranjit-bawa -> {singerName: 'ranjit-bawa'}
+    // /singers/harbhajan-maan -> {singerName: 'harbhajan-maan'}
+    path: '/singers/:singerId',
+    element: <SingerPage/>,
+  },
 ]);
 
 const App = () => {

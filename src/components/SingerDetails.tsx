@@ -1,6 +1,6 @@
 import React from "react";
 
-const UsersDetails = (props) => {
+const SingerDetails = (props) => {
   const names = props.names;
   const photo = props.photo;
   const DoB = props.DoB;
@@ -47,4 +47,4 @@ const UsersDetails = (props) => {
   );
 };
 
-export default UsersDetails;
+export default SingerDetails;
