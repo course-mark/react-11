@@ -1,7 +1,7 @@
 import React from "react";
 
 const SingerDetails = (props) => {
-  const names = props.names;
+  const names = props.name;
   const photo = props.photo;
   const DoB = props.DoB;
   const like = props.like;

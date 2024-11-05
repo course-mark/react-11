@@ -7,6 +7,7 @@ import RanjitBawa from "./pages/RanjitBawa";
 import HarbhajanMaan from "./pages/HarbhajanMaan";
 import SingerDetails from "./components/SingerDetails";
 import SingerPage from "./pages/SingerPage";
+import StateManagement from "./pages/concepts/StateManagement";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     path: '/singers/:singerId',
     element: <SingerPage/>,
   },
+  {
+    path: '/concepts/state-management',
+    element: <StateManagement/>,
+  }
 ]);
 
 const App = () => {
