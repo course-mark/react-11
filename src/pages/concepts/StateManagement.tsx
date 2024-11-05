@@ -4,7 +4,7 @@ const StateManagement = () => {
   // useState
   const [state, setState] = useState(false);
 
-  const backgroundColor = state ? "bg-black": "bg-white"
+  const backgroundColor= state ? "bg-black": "bg-white"
 
   return (
     <div className={backgroundColor}>
