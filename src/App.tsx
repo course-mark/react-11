@@ -8,6 +8,7 @@ import HarbhajanMaan from "./pages/HarbhajanMaan";
 import SingerDetails from "./components/SingerDetails";
 import SingerPage from "./pages/SingerPage";
 import StateManagement from "./pages/concepts/StateManagement";
+import Events from "./pages/concepts/Events";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: '/concepts/state-management',
     element: <StateManagement/>,
+  },
+  {
+    path: '/concepts/events',
+    element: <Events/>,
   }
 ]);
 

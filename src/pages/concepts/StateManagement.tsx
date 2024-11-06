@@ -5,10 +5,11 @@ const StateManagement = () => {
   const [state, setState] = useState(false);
 
   const backgroundColor= state ? "bg-black": "bg-white"
+  const textColor = state ? "text-white": "text-black"
 
   return (
-    <div className={backgroundColor}>
-        <div>Hello Worlds from State management Page {`${state}`}</div>
+    <div className={backgroundColor+ " border"}>
+        <div className={textColor}>Hello Worlds from State management Page {`${state}`}</div>
         <button onClick={()=>{
              setState(true)
         }}>make it true</button>
@@ -18,6 +19,7 @@ const StateManagement = () => {
         }}>
             Make it false
         </button>
+        
     </div>
   );
 };
