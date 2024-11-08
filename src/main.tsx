@@ -5,7 +5,7 @@ import './index.css'
 import Singers from './pages/Singers.tsx'
 
 createRoot(document.getElementById('rooti')!).render(
-  <StrictMode>
+  // <StrictMode>
     <App />
-  </StrictMode>,
+  // </StrictMode>,
 )

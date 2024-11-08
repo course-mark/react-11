@@ -9,6 +9,7 @@ import SingerDetails from "./components/SingerDetails";
 import SingerPage from "./pages/SingerPage";
 import StateManagement from "./pages/concepts/StateManagement";
 import Events from "./pages/concepts/Events";
+import UseEffectHook from "./pages/concepts/hooks/UseEffectHook";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: '/concepts/events',
     element: <Events/>,
+  },
+  {
+    path: '/concepts/hooks/use-effect-hook',
+    element: <UseEffectHook/>
   }
 ]);
 
