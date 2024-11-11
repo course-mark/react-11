@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css'
+import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Singers from "./pages/Singers";
 import KaranAujla from "./pages/KaranAujla";
@@ -10,6 +10,9 @@ import SingerPage from "./pages/SingerPage";
 import StateManagement from "./pages/concepts/StateManagement";
 import Events from "./pages/concepts/Events";
 import UseEffectHook from "./pages/concepts/hooks/UseEffectHook";
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import { Layout } from "./components/Layout";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -17,41 +20,34 @@ import UseEffectHook from "./pages/concepts/hooks/UseEffectHook";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <div>Hello world</div>,
+    element: <Layout />,
+    children: [
+      {
+        path: "/karan-aujla",
+        element: <KaranAujla />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/ranjit-bawa",
+        element: <RanjitBawa />,
+      },
+      {
+        path: "/harbhajan-maan",
+        element: <HarbhajanMaan />,
+      }
+    ],
   },
-  {
-    path:'/singers',
-    element: <Singers/>,
-  },
-  {
-    // path variables / path parameters
-    // /singers/karan-aujla -> {singerName: 'karan-aujla'} -> using useParams()
-    // /singers/ranjit-bawa -> {singerName: 'ranjit-bawa'}
-    // /singers/harbhajan-maan -> {singerName: 'harbhajan-maan'}
-    path: '/singers/:singerId',
-    element: <SingerPage/>,
-  },
-  {
-    path: '/concepts/state-management',
-    element: <StateManagement/>,
-  },
-  {
-    path: '/concepts/events',
-    element: <Events/>,
-  },
-  {
-    path: '/concepts/hooks/use-effect-hook',
-    element: <UseEffectHook/>
-  }
 ]);
 
 const App = () => {
-  return (
-    <RouterProvider router={router} >
-      
-    </RouterProvider>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 };
 
 export default App;
