@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: "/harbhajan-maan",
         element: <HarbhajanMaan />,
-      }
+      },
     ],
   },
 ]);
