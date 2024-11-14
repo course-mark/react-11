@@ -7,7 +7,17 @@ const Layout = () => {
     <div>
       <Header />
       <div className="container mx-auto min-h-screen">
-        <Outlet />
+        {/* Outlet is dynamic. it will depend on browser url */}
+        {/* <KaranAujla />
+        <AboutUs />
+        <Home />
+        <RanjitBawa />
+        <HarbhajanMaan />
+        <UseEffectHook />
+        <Events />
+        <StateManagement />
+        <Children /> */}
+        <Outlet/>
       </div>
       <Footer />
     </div>

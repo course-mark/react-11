@@ -14,6 +14,8 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import { Layout } from "./components/Layout";
 import Layout1 from "./components/Layout1";
+import Children from "./pages/concepts/Children";
+import DataDisplay from "./pages/concepts/Data/DataDisplay";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -54,7 +56,15 @@ const router = createBrowserRouter([
       {
         path: "/concepts/StateManagement",
         element: <StateManagement />,
-      }
+      },
+      {
+        path: "/concepts/children",
+        element: <Children />,
+      },
+      {
+        path: "/concepts/data-display",
+        element: <DataDisplay />,
+      },
     ],
   },
 ]);
