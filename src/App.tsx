@@ -13,6 +13,7 @@ import UseEffectHook from "./pages/concepts/hooks/UseEffectHook";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import { Layout } from "./components/Layout";
+import Layout1 from "./components/Layout1";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -20,7 +21,7 @@ import { Layout } from "./components/Layout";
 
 const router = createBrowserRouter([
   {
-    element: <Layout />,
+    element: <Layout/>,
     children: [
       {
         path: "/karan-aujla",
@@ -42,10 +43,21 @@ const router = createBrowserRouter([
         path: "/harbhajan-maan",
         element: <HarbhajanMaan />,
       },
+      {
+        path: "/concepts/hooks/UseEffectHook.tsx",
+        element: <UseEffectHook />,
+      },
+      {
+        path: "/concepts/Events",
+        element: <Events />,
+      }, 
+      {
+        path: "/concepts/StateManagement",
+        element: <StateManagement />,
+      }
     ],
   },
 ]);
-
 const App = () => {
   return <RouterProvider router={router}></RouterProvider>;
 };
