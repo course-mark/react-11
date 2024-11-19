@@ -16,6 +16,7 @@ import { Layout } from "./components/Layout";
 import Layout1 from "./components/Layout1";
 import Children from "./pages/concepts/Children";
 import DataDisplay from "./pages/concepts/Data/DataDisplay";
+import DataFetching from "./pages/concepts/Data/DataFetching";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -23,7 +24,7 @@ import DataDisplay from "./pages/concepts/Data/DataDisplay";
 
 const router = createBrowserRouter([
   {
-    element: <Layout/>,
+    element: <Layout />,
     children: [
       {
         path: "/karan-aujla",
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: "/concepts/Events",
         element: <Events />,
-      }, 
+      },
       {
         path: "/concepts/StateManagement",
         element: <StateManagement />,
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
       {
         path: "/concepts/data-display",
         element: <DataDisplay />,
+      },
+
+      {
+        path: "/concepts/data-fetching",
+        element: <DataFetching />,
       },
     ],
   },
