@@ -1,8 +1,6 @@
 import React from "react";
 
-const UserCard = (props) => {
-  const user = props.user;
-
+const UserCard = ({ user }) => {
   return (
     <div className="max-w-md mx-auto mt-10">
       <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
@@ -12,17 +10,17 @@ const UserCard = (props) => {
           <p className="text-gray-600 mb-4">
             Email:{" "}
             <a
-              href="mailto:Rey.Padberg@karina.biz"
+              href={`mailto:${user.email}`}
               className="text-blue-500 hover:underline"
             >
-              Rey.Padberg@karina.biz
+              {user.email}
             </a>
           </p>
 
           <div className="mb-4">
             <h3 className="text-xl font-semibold text-gray-700">Address</h3>
             <p className="text-gray-600">
-              {`Street: Kattie Turnpike`}
+              {`Street: ${user.address.street}`}
               <br />
               {`Suite: Suite 198`}
               <br />
