@@ -17,6 +17,7 @@ import Layout1 from "./components/Layout1";
 import Children from "./pages/concepts/Children";
 import DataDisplay from "./pages/concepts/Data/DataDisplay";
 import DataFetching from "./pages/concepts/Data/DataFetching";
+import CustomDataHooks from "./pages/concepts/CustomDataHooks";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/concepts/data-fetching",
         element: <DataFetching />,
+      },
+      {
+        path: "/concepts/custom-data-hooks",
+        element: <CustomDataHooks />,
       },
     ],
   },
