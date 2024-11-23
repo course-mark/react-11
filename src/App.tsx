@@ -18,6 +18,7 @@ import Children from "./pages/concepts/Children";
 import DataDisplay from "./pages/concepts/Data/DataDisplay";
 import DataFetching from "./pages/concepts/Data/DataFetching";
 import CustomDataHooks from "./pages/concepts/CustomDataHooks";
+import Posts from "./pages/Posts";
 /**
  * 1. RouterProvider
  * 2. create router using createBrowserRouter
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: "/concepts/custom-data-hooks",
         element: <CustomDataHooks />,
+      },
+      {
+        path: "/posts",
+        element: <Posts />,
       },
     ],
   },

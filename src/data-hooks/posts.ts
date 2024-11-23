@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { getUserData } from "../services/user.services";
+import { getPostsData } from "../services/post.services";
 
-export const useUsers = () => {
+export const usePosts = () => {
   const [userDetails, setUserDetails] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    getUserData().then((users) => {
-      setUserDetails(users);
+    getPostsData().then((posts) => {
+      setUserDetails(posts);
       setLoading(false);
     });
   }, []);
