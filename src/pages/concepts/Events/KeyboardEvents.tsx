@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Events = () => {
+const MouseEvents = () => {
   const [isMouseIn, setIsMouseIn] = useState(false);
   const [text, setText] = useState("");
   const bgColor = isMouseIn ? "bg-slate-100" : "bg-slate-900";
@@ -50,13 +50,11 @@ const Events = () => {
           }}
         ></input>
       </div>
-      <div
-        className=" cursor-pointer text-4xl bg-green-300 w-96 h-96 flex flex-col items-center justify-center rounded-2xl text-white"
-      >
+      <div className=" cursor-pointer text-4xl bg-green-300 w-96 h-96 flex flex-col items-center justify-center rounded-2xl text-white">
         {text}
       </div>
     </div>
   );
 };
 
-export default Events;
+export default MouseEvents;

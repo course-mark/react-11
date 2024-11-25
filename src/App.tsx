@@ -8,7 +8,7 @@ import HarbhajanMaan from "./pages/HarbhajanMaan";
 import SingerDetails from "./components/SingerDetails";
 import SingerPage from "./pages/SingerPage";
 import StateManagement from "./pages/concepts/StateManagement";
-import Events from "./pages/concepts/Events";
+import Events from "./pages/concepts/Events/MouseEvents";
 import UseEffectHook from "./pages/concepts/hooks/UseEffectHook";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -19,10 +19,6 @@ import DataDisplay from "./pages/concepts/Data/DataDisplay";
 import DataFetching from "./pages/concepts/Data/DataFetching";
 import CustomDataHooks from "./pages/concepts/CustomDataHooks";
 import Posts from "./pages/Posts";
-/**
- * 1. RouterProvider
- * 2. create router using createBrowserRouter
- */
 
 const router = createBrowserRouter([
   {
