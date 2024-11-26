@@ -1,8 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useEventListener } from "usehooks-ts";
 
 const Layout = () => {
+  const navigate = useNavigate();
+  useEventListener("keydown", (e) => {
+    console.log("keybooard key down", e.key);
+    if (e.key === "q") {
+      navigate("/about-us");
+    }
+    if (e.key === "k") {
+      navigate("/karan-aujla");
+    }
+  });
   return (
     <div>
       <Header />
@@ -17,7 +28,7 @@ const Layout = () => {
         <Events />
         <StateManagement />
         <Children /> */}
-        <Outlet/>
+        <Outlet />
       </div>
       <Footer />
     </div>

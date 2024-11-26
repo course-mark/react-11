@@ -1,6 +1,10 @@
 import React from "react";
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useNavigate,
+} from "react-router-dom";
 import Singers from "./pages/Singers";
 import KaranAujla from "./pages/KaranAujla";
 import RanjitBawa from "./pages/RanjitBawa";
@@ -19,6 +23,8 @@ import DataDisplay from "./pages/concepts/Data/DataDisplay";
 import DataFetching from "./pages/concepts/Data/DataFetching";
 import CustomDataHooks from "./pages/concepts/CustomDataHooks";
 import Posts from "./pages/Posts";
+import KeyboardEvents from "./pages/concepts/Events/KeyboardEvents";
+import { useEventListener } from "usehooks-ts";
 
 const router = createBrowserRouter([
   {
@@ -45,15 +51,19 @@ const router = createBrowserRouter([
         element: <HarbhajanMaan />,
       },
       {
-        path: "/concepts/hooks/UseEffectHook.tsx",
+        path: "/concepts/hooks/use-effect-hook",
         element: <UseEffectHook />,
       },
       {
-        path: "/concepts/Events",
+        path: "/concepts/events",
         element: <Events />,
       },
       {
-        path: "/concepts/StateManagement",
+        path: "/concepts/events/keyboard-events",
+        element: <KeyboardEvents />,
+      },
+      {
+        path: "/concepts/state-management",
         element: <StateManagement />,
       },
       {
