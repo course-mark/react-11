@@ -26,6 +26,7 @@ import Posts from "./pages/Posts";
 import KeyboardEvents from "./pages/concepts/Events/KeyboardEvents";
 import { useEventListener } from "usehooks-ts";
 import UncontrolledComponents from "./pages/concepts/UncontrolledComponents";
+import UseRefHook from "./pages/concepts/hooks/UseRefHook";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/concepts/hooks/use-effect-hook",
         element: <UseEffectHook />,
+      },
+      {
+        path: "/concepts/hooks/use-ref-hook",
+        element: <UseRefHook />,
       },
       {
         path: "/concepts/events",
