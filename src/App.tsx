@@ -25,6 +25,7 @@ import CustomDataHooks from "./pages/concepts/CustomDataHooks";
 import Posts from "./pages/Posts";
 import KeyboardEvents from "./pages/concepts/Events/KeyboardEvents";
 import { useEventListener } from "usehooks-ts";
+import UncontrolledComponents from "./pages/concepts/UncontrolledComponents";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: "/concepts/custom-data-hooks",
         element: <CustomDataHooks />,
+      },
+      {
+        path: "/concepts/uncontrolled-components",
+        element: <UncontrolledComponents />,
       },
       {
         path: "/posts",
