@@ -1,17 +1,83 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+
+const verifyFields = (data) => {
+  const { userName, userEmail, userPassword } = data;
+  const errors = [];
+  if (!userName) {
+    errors.push({
+      field: "userName",
+      message: "userName should not be empty",
+    });
+  } else {
+    if (userName.length < 3) {
+      errors.push({
+        field: "userName",
+        message: "userName should be at least 3 characters long",
+      });
+    }
+  }
+  if (!userEmail) {
+    errors.push({
+      field: "userEmail",
+      message: "userEmail should not be empty",
+    });
+  }
+  if (!userPassword) {
+    errors.push({
+      field: "userPassword",
+      message: "userPassword should not be empty",
+    });
+  } else {
+    if (userPassword.length < 6) {
+      errors.push({
+        field: "userPassword",
+        message: "userPassword should be at least 6 characters long",
+      });
+    }
+    for (let i = 0; i < userPassword.length; i++) {
+      let char = userPassword[i];
+      if ('~!@#$%^&*()-_+{}:<>?"'.includes(char)) {
+        continue;
+      }
+      if (i === userPassword.length - 1) {
+        errors.push({
+          field: "userPassword",
+          message: "userPassword should contain atleast one special character",
+        });
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    throw new Error(JSON.stringify(errors));
+  }
+
+  return true;
+};
 
 const UncontrolledComponents = () => {
+  const [errors, setErrors] = useState([]);
   const formRef = useRef<HTMLFormElement>(null);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formElement = formRef.current;
     const formData = new FormData(formElement);
     const data = Object.fromEntries(formData.entries());
+    try {
+      verifyFields(data);
+    } catch (e) {
+      setErrors(JSON.parse(e.message));
+
+      return;
+    }
 
     const stringifiedData = JSON.stringify(data);
 
     localStorage.setItem("userData", stringifiedData);
   };
+
+  console.log(errors);
+
   return (
     <div>
       {/* user details form */}
@@ -30,6 +96,7 @@ const UncontrolledComponents = () => {
               className="border border-gray-300 p-2 rounded-md"
             />
           </label>
+          {errors?.find((error) => error.field === "userName")?.message || ""}
           <label>
             Email:
             <input
@@ -46,6 +113,11 @@ const UncontrolledComponents = () => {
               className="border border-gray-300 p-2 rounded-md"
             />
           </label>
+          <div className="text-red-500">
+            {errors?.find((error) => error.field === "userPassword")?.message ||
+              ""}
+          </div>
+
           <button
             type="submit"
             className="bg-blue-500 text-white p-2 rounded-md"
