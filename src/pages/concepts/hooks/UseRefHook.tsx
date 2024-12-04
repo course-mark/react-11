@@ -8,7 +8,7 @@ const UseRefHook = () => {
     <div>
       <button
         onClick={() => {
-          alert(1);
+          // alert(1);
           button2Ref.current.click();
         }}
         ref={button1Ref}
