@@ -1,4 +1,12 @@
 import { useRef, useState } from "react";
+import * as yup from "yup";
+
+const signUpValidator = yup.object().shape({
+  userName: yup.string().required().min(3),
+  userEmail: yup.string().email(),
+  userPassword: yup.string().min(6)
+})
+
 
 const verifyFields = (data) => {
   const { userName, userEmail, userPassword } = data;
@@ -64,9 +72,14 @@ const UncontrolledComponents = () => {
     const formData = new FormData(formElement);
     const data = Object.fromEntries(formData.entries());
     try {
-      verifyFields(data);
+      // verifyFields(data);
+      signUpValidator.validateSync(data,{
+        abortEarly:false
+      })
     } catch (e) {
-      setErrors(JSON.parse(e.message));
+
+      console.log(e)
+      // setErrors(JSON.parse(e.message));
 
       return;
     }
