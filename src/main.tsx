@@ -2,4 +2,8 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
-createRoot(document.getElementById("rooti")!).render(<App />);
+const realDom = document.getElementById("rooti")!;
+
+const virtualDom = createRoot(realDom)
+
+virtualDom.render(<App />);
