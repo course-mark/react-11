@@ -27,6 +27,7 @@ import KeyboardEvents from "./pages/concepts/Events/KeyboardEvents";
 import { useEventListener } from "usehooks-ts";
 import UncontrolledComponents from "./pages/concepts/UncontrolledComponents";
 import UseRefHook from "./pages/concepts/hooks/UseRefHook";
+import LogicalOperators from "./pages/concepts/LogicalOperators";
 
 const router = createBrowserRouter([
   {
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
       {
         path: "/concepts/uncontrolled-components",
         element: <UncontrolledComponents />,
+      },
+      {
+        path: "/concepts/logical-operators",
+        element: <LogicalOperators />,
       },
       {
         path: "/posts",

@@ -11,7 +11,7 @@ const Home = () => {
       setVisible(!visible);
     }, 2000);
     return () => {
-      // alert("Bye Bye")
+      alert("Bye Bye")
     };
   }, []);
 
