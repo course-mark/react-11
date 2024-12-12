@@ -2,16 +2,16 @@ import React, { useState } from "react";
 /**
  * flag false => !flag true => !!flag false
  * str "" => !str true => !!str false
- * 
+ *
  * flag true => !flag false => !!flag true
  * str "qe" => !str false => !!str true
- * 
+ *
  * flag false => !flag true => !!flag false
  * num 0 => !num true => !!num false
- * 
+ *
  * flag true => !flag false => !!flag true
  * num -10 => !num false => !!num true
- * 
+ *
  */
 const LogicalOperators = () => {
   const [flag1, setFlag1] = useState(false);
@@ -66,8 +66,14 @@ const LogicalOperators = () => {
       {flag2 || flag3 || flag4 || flag1 || (
         <div> Hello world from Or Operator </div>
       )}
-      {"" || <div> Hello world from op Operator 123 </div>}
-      {undefined ?? <div> Hello world from nullish Operator </div>}
+      {"[LEFT SIDE]" || (
+        <div> [RIGHT SIDE]Hello world from op Operator 123 </div>
+      )}
+      <br />
+      {undefined ?? <div> Hello world from nullish Operator 1</div>}
+      {null ?? <div> Hello world from nullish Operator 2</div>}
+      <br />
+      {null ?? <div> Hello world from nullish Operator 3</div>}
     </div>
   );
 };
