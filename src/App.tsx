@@ -28,6 +28,8 @@ import { useEventListener } from "usehooks-ts";
 import UncontrolledComponents from "./pages/concepts/UncontrolledComponents";
 import UseRefHook from "./pages/concepts/hooks/UseRefHook";
 import LogicalOperators from "./pages/concepts/LogicalOperators";
+import PropDrilling from "./pages/concepts/PropDrilling";
+import GlobalState from "./pages/concepts/GlobalState";
 
 const router = createBrowserRouter([
   {
@@ -97,6 +99,14 @@ const router = createBrowserRouter([
       {
         path: "/concepts/logical-operators",
         element: <LogicalOperators />,
+      },
+      {
+        path: "/concepts/prop-drilling",
+        element: <PropDrilling />,
+      },
+      {
+        path: "/concepts/global-state",
+        element: <GlobalState />,
       },
       {
         path: "/posts",
