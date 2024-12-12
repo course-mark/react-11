@@ -1,5 +1,18 @@
 import React, { useState } from "react";
-
+/**
+ * flag false => !flag true => !!flag false
+ * str "" => !str true => !!str false
+ * 
+ * flag true => !flag false => !!flag true
+ * str "qe" => !str false => !!str true
+ * 
+ * flag false => !flag true => !!flag false
+ * num 0 => !num true => !!num false
+ * 
+ * flag true => !flag false => !!flag true
+ * num -10 => !num false => !!num true
+ * 
+ */
 const LogicalOperators = () => {
   const [flag1, setFlag1] = useState(false);
   const [flag2, setFlag2] = useState(false);
@@ -42,10 +55,10 @@ const LogicalOperators = () => {
         <div>hello world from ternary operator (off)</div>
       )}
 
-      {/* not operator (!) */}
-      {!flag1 && <div> Hello world from And Operator flag 1 is off </div>}
+      {/* and operator (&&) */}
+      {flag1 && <div> Hello world from And Operator flag 1 is on </div>}
 
-      {/* And Operator (&&) */}
+      {/* And Operator chaining (&&) */}
       {flag2 && flag3 && flag4 && flag1 && (
         <div> Hello world from And Operator </div>
       )}
