@@ -1,4 +1,5 @@
-import { Button } from "antd";
+import { AppleFilled } from "@ant-design/icons";
+import { Button, FloatButton } from "antd";
 import React, { useState } from "react";
 
 const AntdButtonsPage = () => {
@@ -8,7 +9,11 @@ const AntdButtonsPage = () => {
     <div>
       <div className="flex flex-wrap">
         <Button>Default Button</Button>
-        <Button loading={false} type="primary">Primary Button</Button>
+        <AppleFilled style={{
+          color: "red",
+          fontSize: "50px",
+        }}/>
+        <Button loading={false} type="primary"> Primary Button</Button>
         <Button type="dashed">Dashed Button</Button>
         <Button type="link">Link Button</Button>
         <Button type="text">Text Button</Button>

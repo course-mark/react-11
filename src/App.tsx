@@ -32,6 +32,9 @@ import PropDrilling from "./pages/concepts/PropDrilling";
 import GlobalState from "./pages/concepts/GlobalState";
 import AntdPractice from "./pages/AntdPractice";
 import AntdButtonsPage from "./pages/concepts/antd/AntdButtonsPage";
+import { FloatButton } from "antd";
+import { FacebookFilled, GooglePlusOutlined, QuestionCircleOutlined, SmileTwoTone, SyncOutlined } from "@ant-design/icons";
+import AnchorPage from "./pages/concepts/antd/AnchorPage";
 
 const router = createBrowserRouter([
   {
@@ -124,9 +127,22 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/antd/anchor",
+    element: <AnchorPage />,
+  },
 ]);
 const App = () => {
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <>
+      <FloatButton.Group shape="circle" style={{ insetInlineEnd: 24 }}>
+        <FloatButton icon={<QuestionCircleOutlined />} />
+        <FloatButton icon={<SmileTwoTone />}/>
+        <FloatButton.BackTop visibilityHeight={0} />
+      </FloatButton.Group>
+      <RouterProvider router={router}></RouterProvider>;
+    </>
+  );
 };
 
 export default App;
