@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import * as yup from "yup";
 
 const signUpValidator = yup.object().shape({
   userName: yup.string().required().min(3),
   userEmail: yup.string().email(),
-  userPassword: yup.string().min(6)
-})
-
+  userPassword: yup.string().min(6),
+});
 
 const verifyFields = (data) => {
   const { userName, userEmail, userPassword } = data;
@@ -65,6 +65,7 @@ const verifyFields = (data) => {
 
 const UncontrolledComponents = () => {
   const [errors, setErrors] = useState([]);
+  const [form, setForm] = useLocalStorage("userData1", {});
   const formRef = useRef<HTMLFormElement>(null);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,27 +74,25 @@ const UncontrolledComponents = () => {
     const data = Object.fromEntries(formData.entries());
     try {
       // verifyFields(data);
-      signUpValidator.validateSync(data,{
-        abortEarly:false
-      })
+      signUpValidator.validateSync(data, {
+        abortEarly: false,
+      });
     } catch (e) {
-
-      console.log(e)
+      console.log(e);
       // setErrors(JSON.parse(e.message));
 
       return;
     }
-
-    const stringifiedData = JSON.stringify(data);
-
-    localStorage.setItem("userData", stringifiedData);
+    setForm(data);
   };
 
   console.log(errors);
-
   return (
     <div>
       {/* user details form */}
+      initial data is {
+        JSON.stringify(form)
+      }
       <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
         <h1 className="text-2xl font-bold mb-4">User Details Form</h1>
         <form

@@ -30,6 +30,8 @@ import UseRefHook from "./pages/concepts/hooks/UseRefHook";
 import LogicalOperators from "./pages/concepts/LogicalOperators";
 import PropDrilling from "./pages/concepts/PropDrilling";
 import GlobalState from "./pages/concepts/GlobalState";
+import AntdPractice from "./pages/AntdPractice";
+import AntdButtonsPage from "./pages/concepts/antd/AntdButtonsPage";
 
 const router = createBrowserRouter([
   {
@@ -111,6 +113,14 @@ const router = createBrowserRouter([
       {
         path: "/posts",
         element: <Posts />,
+      },
+      {
+        path: "/antd-practice",
+        element: <AntdPractice />,
+      },
+      {
+        path: "/antd/buttons",
+        element: <AntdButtonsPage />,
       },
     ],
   },
